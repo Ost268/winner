@@ -1,0 +1,6 @@
+[submodule "toolchain/llvm-arm-toolchain-ship/10.0"]
+	path = toolchain/llvm-arm-toolchain-ship/10.0
+	url = https://github.com/map220v/QCOM_LLVM_10.0.git
+[submodule "toolchain/gcc/linux-x86/aarch64/aarch64-linux-android-4.9"]
+	path = toolchain/gcc/linux-x86/aarch64/aarch64-linux-android-4.9
+	url = https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9
