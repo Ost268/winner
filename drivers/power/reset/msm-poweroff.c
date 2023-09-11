@@ -179,7 +179,7 @@ static bool get_dload_mode(void)
 {
 	return dload_mode_enabled;
 }
-#if 0
+#if 1
 static void enable_emergency_dload_mode(void)
 {
 	int ret;
@@ -312,7 +312,7 @@ static void msm_restart_prepare(const char *cmd)
 	sec_debug_update_dload_mode(restart_mode, in_panic);
 #endif
 
-#ifndef CONFIG_SEC_DEBUG
+#ifdef CONFIG_SEC_DEBUG
 	if (qpnp_pon_check_hard_reset_stored()) {
 		/* Set warm reset as true when device is in dload mode */
 		if (get_dload_mode() ||
@@ -369,7 +369,7 @@ static void msm_restart_prepare(const char *cmd)
 			if (!ret)
 				__raw_writel(0x6f656d00 | (code & 0xff),
 					     restart_reason);
-#ifndef CONFIG_SEC_DEBUG
+#ifdef CONFIG_SEC_DEBUG
 		} else if (!strncmp(cmd, "edl", 3)) {
 			enable_emergency_dload_mode();
 #endif			
